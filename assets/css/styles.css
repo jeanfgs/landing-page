@@ -1,0 +1,244 @@
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+ */
+
+.intro-content {
+    position: relative;
+    top: -7rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh;
+}
+
+.intro-text-content,
+.intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.intro-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.top3-content {
+    max-width: 64rem;
+    display: flex;
+    /* flex-flow: column wrap; */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* min-height: 100vh; */
+    text-align: center;
+}
+
+.grid-one-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
+    padding: var(--gap);
+}
+
+.grid-main-heading {
+    margin-bottom: 1rem;
+}
+
+.grid-description {
+    padding: 2rem 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    counter-reset: gridcounter;
+    padding: 5rem;
+}
+
+.grid h3 {
+    font-size: 3rem;
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+.grid h3::before {
+    counter-increment: gridcounter;
+    content: counter(gridcounter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: -2rem;
+    transform: rotate(5deg);
+}
+
+.contact-form {
+    grid-column: span 2;
+
+}
+
+.contact-form .form-grid {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.form-grid legend{
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    flex: 1 1 32rem;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input{
+    border: none;
+    background: var(--white-color);
+    width: 100%;
+    height: 5rem;
+    font-size:2rem;
+    outline: none;
+
+}
+.form-group textarea{
+    border: none;
+    background: var(--white-color);
+    width: 100%;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+box-shadow: 0 0 7px 2px darkblue;
+}
+
+body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+.form-group button{
+    border: 0.5rem solid var(--white-color);
+    background: var(--black-color);
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.form-group button:hover{
+    border: 0.5rem solid var(--black-color);
+    background: var(--white-color);
+    color: var(--black-color);
+}
+
+.form-group ::placeholder{
+    color:gray;
+    font-family: sans-serif;
+    text-indent: 2rem;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a,
+.footer p {
+    color: #333;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 3rem;
+}
+.close-menu {
+display: none;
+}
+
+@media (max-width: 80rem) {
+    .intro-content, .grid{
+        grid-template-columns: 1fr;
+    }
+    .gallery-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .gallery-img img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .grid-one-content{
+        display: block;
+    }
+    .menu{
+        bottom: 0;
+        text-align: center;
+    }
+    .menu-content{
+        height: 100vh;
+    }
+
+    .menu-content, .menu-content ul{
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .close-menu-label::after{
+        content: '≡';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        font-size: 5rem;
+        line-height: 5rem;
+        width: 5rem;
+        height: 5rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    .close-menu:checked~.menu {
+        display: block
+    }
+    .close-menu:checked~.close-menu-label::after {
+        content: '✖';
+    }
+    .menu-spacing{
+        display: none;
+    }
+
+    .back-to-top{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: black;
+        background-color: turquoise;
+        transform: rotate(-90deg);
+        border: 0.1rem solid;
+    }
+}
